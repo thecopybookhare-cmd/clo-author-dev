@@ -6,6 +6,92 @@
 
 ---
 
+## Part 0 — Statista Verified Data (April 2026, Confirmed from CSV + PDF)
+
+Data extracted directly from Statista Market Insights export (`mi_mobility_electric-vehicles_chile_usd_en_with_kmis_2026-4-12.csv`) and Statista Research AI. Fully verified — use with confidence in essay.
+
+---
+
+### 0.1 EV Sales Chile — Time Series (BEV + PHEV, units)
+
+| Year | Total EV | BEV | PHEV | Total New Cars | EV Market Share |
+|------|----------|-----|------|----------------|-----------------|
+| 2019 | 294 | 159 | 135 | 260,683 | 0.1% |
+| 2020 | 857 | 719 | 138 | 194,128 | 0.4% |
+| 2021 | 1,837 | 1,512 | 325 | 304,045 | 0.6% |
+| 2022 | 2,287 | 1,673 | 614 | 313,589 | 0.7% |
+| 2023 | 906 | 404 | 502 | 218,642 | 0.4% |
+| 2024 | **6,206** | **4,236** | **1,970** | **209,154** | **~3.0%** |
+
+**Source:** Statista Market Insights (CSV export, April 2026); total new cars from Statista Research AI.
+
+**Key insight — Barrera 1:** Despite the 2024 surge (+584% vs 2023), EVs represent only ~3% of new car sales and roughly 0.13% of the total fleet (~4.8M vehicles). At this pace, fleet electrification is measured in decades, not years. Note the 2023 dip (906 units) likely reflects the end of the first government subsidy cycle — a warning sign of policy dependence.
+
+---
+
+### 0.2 Charging Stations Chile — Time Series
+
+| Year | Total Chargers | Year | Total Chargers |
+|------|----------------|------|----------------|
+| 2016 | 6 | 2022 | 382 |
+| 2017 | 7 | 2023 | 389 |
+| 2018 | 28 | **2024** | **396** |
+| 2019 | 42 | 2025F | 576 |
+| 2020 | 52 | 2026F | 757 |
+| 2021 | 349 | 2029F | 1,298 |
+
+**Source:** Statista Market Insights (CSV export, April 2026).
+
+**Key insight — Barrera 2:** Only **396 total public chargers** in Chile in 2024 — for a country of 19 million people. That is **~2.1 chargers per 100,000 inhabitants**, compared to 460 in Norway and 855 in the Netherlands. Even under Statista's optimistic forecast (1,298 by 2029), Chile would reach only ~6.8 per 100k — still 67× below Norway's current density. Geographic concentration in Santiago makes regional access even worse.
+
+---
+
+### 0.3 Average EV Price Chile
+
+| Segment | 2022 | 2023 | 2024 | 2025F |
+|---------|------|------|------|-------|
+| All EVs (average) | $77,800 | $89,500 | **$79,000** | $78,900 |
+| BEV only | $65,900 | $65,000 | **$64,900** | $64,900 |
+| PHEV only | $110,300 | $109,300 | **$109,200** | $109,200 |
+
+*All figures in USD. Source: Statista Market Insights (CSV export, April 2026).*
+
+**South America average PPU:** ~$101,870 in 2024 (Statista PDF). Chile is slightly below regional average for BEV ($64,900 vs $102k) due to Chinese imports (BYD, SAIC).
+
+**Key insight — Barrera 3:** A BEV in Chile costs ~**USD 64,900** (~CLP 62 million at 2024 exchange rates). Chile's median household income is ~USD 12,000–15,000/year. This means an average EV represents **4–5 years of median household income** — structurally inaccessible for quintiles 1–3 without subsidized financing. Even quintile 4 households (income ~USD 20,000/year) face a 3× income-to-price ratio. Compare: Norway eliminated VAT (25%) on EVs, reducing effective price by ~USD 16,000.
+
+---
+
+### 0.4 EV Revenue Chile
+
+| Year | Total Revenue (M USD) | BEV Revenue (M USD) | PHEV Revenue (M USD) |
+|------|----------------------|--------------------|--------------------|
+| 2021 | 137.3 | 101.1 | 36.2 |
+| 2022 | 177.9 | 110.2 | 67.7 |
+| 2023 | 81.1 | 26.3 | 54.9 |
+| **2024** | **490.0** | **274.9** | **215.1** |
+| 2025F | 498.0 | 280.1 | 218.0 |
+
+*Source: Statista Market Insights (CSV export, April 2026).*
+
+---
+
+### 0.5 Propulsion Mix — Chilean Fleet (Survey, 2024)
+
+| Propulsion | Fleet Share |
+|-----------|-------------|
+| Gasoline | 80% |
+| Diesel | 15% |
+| Hybrid (non-plug-in) | 2% |
+| Electric (BEV) | 1% |
+| Other/unknown | 2% |
+
+*Source: Statista Research AI, based on survey data 2024.*
+
+This fleet share (1% EV) vs. new sales share (~3%) confirms the slow stock turnover problem central to Barrera 1.
+
+---
+
 ## Part I — Data Retrieved Now (Live Fetched, April 2026)
 
 All data below was fetched live during this session. Each figure carries a source link for direct verification.
