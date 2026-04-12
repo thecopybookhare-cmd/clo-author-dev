@@ -92,6 +92,77 @@ This fleet share (1% EV) vs. new sales share (~3%) confirms the slow stock turno
 
 ---
 
+## Part 0B — GlobalData Verified Data (April 2026)
+
+Data extracted from GlobalData reports provided directly by user:
+- *New Cars in Chile* (September 2025, Reference Code: 0077-0358)
+- *Global EV Charging Infrastructure* (April 2026, Reference Code: 0199-3006)
+- *Analyst Briefing: The surge, decline, and possible resurgence of the Chilean LV market* (July 2023)
+
+---
+
+### 0B.1 Chile New Cars Market — Historical & Forecast (GlobalData)
+
+| Year | Volume (units) | Value (USD bn) | YoY Growth (vol) |
+|------|---------------|---------------|-----------------|
+| 2019 | 272,505 | $5.0B | — |
+| 2020 | 175,311 | $3.2B | -35.7% |
+| 2021 | 278,913 | $5.1B | +59.1% |
+| 2022 | 293,474 | $5.4B | +5.2% |
+| 2023 | 200,531 | $3.7B | -31.7% |
+| 2024 | **184,545** | **$3.9B** | **-8.0%** |
+| 2025F | 215,056 | $4.3B | +16.5% |
+| 2029F | 339,619 | $5.8B | +84% vs 2024 |
+
+**CAGR 2019–24 (volume): -7.5% | CAGR 2024–29 (forecast): +13%**
+
+*Source: GlobalData, New Cars in Chile, September 2025.*
+
+**Key insight — Barrera 1:** The new car market has been in structural decline (-7.5% CAGR). GlobalData explicitly identifies this as driven by: (1) consumers shifting to the used car market ("more affordable options"), and (2) high vehicle prices and costly financing making new cars less accessible. This directly confirms the slow fleet renewal dynamic. With a shrinking new car market, EV penetration in the total fleet is even slower.
+
+---
+
+### 0B.2 Chile New Cars — Market Share by Brand (2024)
+
+| Brand Group | Volume Share |
+|-------------|-------------|
+| Hyundai Group | 17.1% |
+| Suzuki | ~10% |
+| Chery (Chinese) | ~8% |
+| Stellantis | ~7% |
+| Top 4 combined | 42.2% |
+
+**Key insight:** Chery (Chinese brand) is already a top-4 player — confirming GlobalData's finding that Chile is a "test market" for Chinese manufacturers expanding EVs into South America. BYD is not yet top-4 but growing rapidly. This is strategically relevant: Chinese brands bring affordable EVs, but without financing mechanisms, even cheaper Chinese models (~USD 25,000–35,000) remain inaccessible to quintiles 1–3.
+
+---
+
+### 0B.3 GlobalData Analyst Assessment — Structural Drivers (July 2023)
+
+Key quotes relevant to the essay (paraphrased — cite GlobalData Krafft, 2023):
+
+- **Chile as test market:** "The Chilean market, with a strong economy and low bar for entry, has started to be somewhat of a test market for [Chinese EV vehicles] before their producers branch out into other markets in South America."
+- **Political risk:** Constitutional uncertainty caused businesses to hesitate on significant investments — relevant for charging infrastructure rollout.
+- **Pension fund effect:** Early COVID-19 pension withdrawals temporarily boosted vehicle sales, masking underlying affordability constraints. When halted, sales fell sharply — revealing demand fragility.
+- **Supply chain advantage:** Chile's lack of domestic auto production paradoxically helped during COVID-19 supply chain crisis (could import from wherever stock was available).
+
+---
+
+### 0B.4 Global EV Charging Infrastructure Market Context (GlobalData, April 2026)
+
+| Metric | Value |
+|--------|-------|
+| Global market value 2025 | $85.4 billion (+26.1% YoY) |
+| Global market volume 2025 | 1,565,766 charging points (+20.2% YoY) |
+| Forecast 2030 value | $263.4 billion (CAGR 25.3%) |
+| Level 2 chargers share | 60.4% of market value |
+| DC fast chargers share | 30.4% |
+| Asia-Pacific share | 58.2% |
+| Europe share | ~17% |
+
+**Key insight — Barrera 2:** The global charging infrastructure market is growing at 26% annually — Chile is almost entirely absent from this growth. With 396 total chargers vs. a global installed base growing by 1.5 million units/year, Chile risks permanent infrastructure lag. The dominance of Level 2 chargers (60%) is relevant for Chile's strategy: Level 2 is cheaper to deploy and sufficient for urban/suburban use, making a targeted Level 2 rollout (as Netherlands did) more feasible than a DC fast charger-first approach.
+
+---
+
 ## Part I — Data Retrieved Now (Live Fetched, April 2026)
 
 All data below was fetched live during this session. Each figure carries a source link for direct verification.
