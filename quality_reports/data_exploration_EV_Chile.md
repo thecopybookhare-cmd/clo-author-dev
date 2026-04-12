@@ -163,6 +163,106 @@ Key quotes relevant to the essay (paraphrased — cite GlobalData Krafft, 2023):
 
 ---
 
+## Part 0C — Factiva Verified Data (April 2026)
+
+Sources: 295 articles retrieved from Factiva (2021–2026). Key sources: El Mostrador, La Tercera, Business News Americas, BioBio, Norte y Energía. All paraphrased — no verbatim reproduction.
+
+---
+
+### 0C.1 EV Market Share Chile — The Policy Gap (Barrera 1)
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| EV share of new car sales 2024 | **1.5%** | El Mostrador, enero 2026 |
+| EV share of new car sales 2025 | **1.8%** | El Mostrador, enero 2026 |
+| Annual growth rate at current pace | **~0.2% per year** | El Mostrador, enero 2026 |
+| Target: EV share by 2035 | **100%** (Estrategia Nacional) | Ministerio de Energía |
+| Gap: needed annual growth to hit target | **~9.8 pp/year** vs actual 0.2 pp | Calculated |
+| Electric bus share in Santiago | **55%** of fleet | El Mostrador, enero 2026 |
+| Chile's ranking in electric buses globally | **2nd after China** | El Mostrador, enero 2026 |
+
+**Key quote (paraphrased):** Rodrigo Espinoza, Volvo Cars Chile, at Congreso Futuro 2026: "We need public policies that allow citizens to access this technology tangibly. The 2035 goal will only be possible if we move from intention to action today."
+
+**Key finding:** Chile leads the world in public EV transport (2nd in electric buses after China) but has failed to replicate this in private vehicles. The 1.5% market share in 2024 vs. the 100% target for 2035 represents the sharpest illustration of the structural barrier gap.
+
+---
+
+### 0C.2 Charging Infrastructure — The Geographic and Tariff Barriers (Barrera 2)
+
+**Industry testimony (paraphrased, Business News Americas, October 2023):**
+Héctor Illanes, SAIC Motor (MG) subdirector Chile: "The availability of public charging stations is limited, which can generate concerns about range and comfort. We would obviously like to move faster on this, because this is a major problem today."
+
+**Structural tariff barrier (paraphrased, BioBio/Enerlink CEO, April 2026):**
+The Chilean electricity tariff structure means charging station costs depend heavily on peak consumption in peak hours. A station with low utilization — expected in early rollout years — can face **triple the kWh cost** compared to a high-demand station. This creates a vicious cycle: higher uncertainty → fewer investors → fewer stations → less user confidence → slower adoption. A differentiated tariff for early-stage charging infrastructure would break this cycle.
+
+**Regional program — Antofagasta (Norte y Energía, October 2023):**
+- The Antofagasta region has 3,615 taxis colectivos + 532 basic taxis + 256 tourist taxis
+- "Mi Taxi Eléctrico" + "Transporte Eléctrico" programs cofinanced acquisition of **70 taxis total** in the region
+- Scale: 70 EVs out of 4,403 vehicles = 1.6% of regional taxi fleet
+- Authorities signed "Acuerdo para la Aceleración de la Electromovilidad en la Región de Antofagasta" — political commitment, minimal scale
+
+**Infrastructure growth 2026:** Public charging infrastructure grew ~40% in 2025–26, but growth concentrated on highways in the Región Metropolitana and major inter-urban routes (Santiago–Puerto Montt corridor cited as viable). Regional coverage remains thin.
+
+---
+
+### 0C.3 EV Prices and Financing — The Affordability Barrier (Barrera 3)
+
+**Price comparison Chile (2023 vs 2026):**
+
+| Segment | 2023 Price (CLP) | 2026 Price (CLP) | USD equiv. 2026 |
+|---------|-----------------|-----------------|-----------------|
+| Average conventional car | $23.6M | ~$25M | ~$27,000 |
+| Cheapest EV (2023) | ~$30M | — | ~$34,500 |
+| Renault Kwid E-Tech (cheapest 2026) | — | **$11.99M** (w/bonuses) | **~$13,000** |
+| Nammi 001 | — | $14.99M | ~$16,300 |
+| Hyundai Inster | — | $18.59M | ~$20,200 |
+| MG4 Electric | — | $21.99M | ~$23,900 |
+| Average EV (all segments) | ~$59M | ~$35–40M | ~$38–43,000 |
+
+*Sources: Business News Americas (2023); La Tercera, BioBio (2026).*
+
+**Note:** The dramatic price drop from ~$59M CLP average in 2023 to sub-$12M CLP for entry models in 2026 is almost entirely driven by Chinese brands (BYD, Changan, JAC, SAIC/MG). This is the most significant market change between 2023 and 2026 and directly affects the Barrera 3 argument — the financing barrier is now less about sticker price for entry models and more about **credit access** for quintiles 1-3.
+
+**Operating cost comparison Chile 2026 (paraphrased, Factiva):**
+- Full tank gasoline: CLP $65,000–$80,000 vs. full EV charge: CLP $8,000–$12,000 (~85% savings)
+- Maintenance: EV up to 80% cheaper than combustion vehicles
+- Circulation permit (permiso de circulación): Ley 21.505 offers discount for EVs
+
+**Current financing mechanisms Chile:**
+- BancoEstado: preferential rate credit line for taxi/colectivo drivers (announced alongside gasoline price increase)
+- Ley 21.505 (2022): circulation permit discount (up to 65% for BYD, per Factiva)
+- ANAC proposal: extend 8-year benefit calendar (currently capped at 2031, only 6 years for 2026 buyers)
+- CORFO cofinancing for EV taxis in regions (Mi Taxi Eléctrico program)
+
+**What's missing vs. Norway/Netherlands:**
+- No VAT exemption on EVs (Norway eliminated 25% VAT → ~USD 16,000 price reduction)
+- No IVA deduction for individual EV purchases (only allowed for company trucks/vans)
+- No scrappage scheme tied to EV purchase
+- No mass-market consumer credit with subsidized rates for private buyers
+
+---
+
+### 0C.4 Comparative Policy Evidence (from Factiva coverage)
+
+| Country | Key mechanism | Result cited in Factiva |
+|---------|--------------|------------------------|
+| Norway | >90% new car sales electrified | Cited in El Mostrador (Congreso Futuro 2026) |
+| Colombia | EVs exempt from Pico y Placa (no circulation restrictions), no IVA (19%) | Factiva comparison article 2026 |
+| Costa Rica | Stable long-term incentives | El Mostrador, Congreso Futuro 2026 |
+| Chile | Ley 21.505 (circulation permit discount), BancoEstado taxi credit line | Multiple Factiva articles |
+
+---
+
+### 0C.5 Additional Strategic Insight
+
+**"Chile debería liderar la electrificación en Sudamérica, pero se está quedando rezagado"** — headline from Factiva (exact date/source not recorded — UNVERIFIED). This captures the central tension the essay must address.
+
+**Hydrogen distraction:** One article headline: *"Cómo la 'locura' del presidente Boric por el hidrógeno verde retrasó Chile en electromovilidad"* — suggests a policy opportunity cost angle worth developing in the essay's policy recommendations section.
+
+**96% satisfaction among EV owners:** Survey data cited in Factiva — 96% of Chileans who drive an EV are satisfied. Suggests demand is not the binding constraint — supply-side access (price, credit, infrastructure) is.
+
+---
+
 ## Part I — Data Retrieved Now (Live Fetched, April 2026)
 
 All data below was fetched live during this session. Each figure carries a source link for direct verification.
