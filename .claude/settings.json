@@ -49,7 +49,9 @@
       "Edit(/.claude/skills/review/**)",
       "Bash(mkdir -p .claude/references)",
       "Bash(mv .claude/rules/journal-profiles.md .claude/references/journal-profiles.md)",
-      "Bash(echo \"meta-governance.md: 252 -> 20 lines \\(saved 232\\)\")"
+      "Bash(echo \"meta-governance.md: 252 -> 20 lines \\(saved 232\\)\")",
+      "WebSearch(*)",
+      "WebFetch(*)"
     ],
     "additionalDirectories": [
       "/Users/hsantanna/repos/clo-author/.claude/rules/archive",
