@@ -6,8 +6,8 @@
      See the guide at https://hugosantanna.github.io/clo-author/ for full documentation. -->
 
 **Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
-**Field:** [YOUR FIELD — Economics by default. Can be adapted to Finance, Accounting, Marketing, etc.]
+**Institution:** [Universidad Adolfo Ibañez]
+**Field:** [Business Administration]
 **Branch:** main
 
 ---
