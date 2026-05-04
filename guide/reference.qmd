@@ -9,14 +9,14 @@ subtitle: "Every Command, Flag, and Subcommand"
 |---------|--------------|-------------|
 | `/new-project [topic]` | --- | Full orchestrated pipeline: idea to paper |
 | `/discover` | `--lit`, `--data`, `--ideate` | Discovery phase: interview, literature, data |
-| `/strategize` | `--pap` | Identification strategy or pre-analysis plan |
+| `/strategize` | `--pap` | Empirical strategy (4 paper types) or pre-analysis plan |
 | `/analyze [dataset]` | `--dual [langs]` | End-to-end data analysis (single or parallel language) |
-| `/write [section]` | `--humanize` | Draft paper sections or strip AI patterns |
-| `/review [file]` | `--peer [journal]`, `--methods`, `--proofread`, `--code`, `--replicate [lang]`, `--all` | Quality reviews (routes by target + flags) |
+| `/write [section]` | `--humanize` | Draft sections (argument moves, 4 paper types) or strip AI patterns |
+| `/review [file]` | `--peer [journal]`, `--peer --r2`, `--stress [journal]`, `--methods`, `--proofread`, `--code`, `--replicate [lang]`, `--all` | Quality reviews (routes by target + flags) |
 | `/revise [report]` | --- | R&R cycle: classify + route referee comments |
 | `/talk` | `create`, `audit`, `compile` | Beamer presentations |
 | `/submit` | `--target`, `--package`, `--audit`, `--final` | Submission pipeline |
-| `/tools` | `commit`, `compile`, `validate-bib`, `journal`, `context`, `deploy`, `learn` | Utilities |
+| `/tools` | `commit`, `compile`, `validate-bib`, `journal`, `context`, `deploy`, `learn`, `lint`, `upgrade` | Utilities |
 
 ---
 
@@ -62,8 +62,8 @@ Launches the full orchestrated pipeline. Claude conducts a research interview, b
 
 | Mode | Agents | Output |
 |------|--------|--------|
-| *(default)* | Strategist → strategist-critic | Strategy memo + robustness plan + falsification tests |
-| `--pap` | Strategist (PAP mode) | Pre-analysis plan with outcomes, power, subgroups |
+| *(default)* | Strategist → strategist-critic | Strategy memo (paper-type aware) + robustness plan + falsification tests |
+| `--pap` | Strategist (PAP mode) | Pre-analysis plan in AEA/OSF/EGAP format *(primarily experimental/RCT)* |
 
 **Saves to:** `quality_reports/strategy_memo_[topic].md`
 
@@ -74,7 +74,6 @@ Launches the full orchestrated pipeline. Claude conducts a research interview, b
 ```
 /analyze [dataset path or goal]
 /analyze --dual r,python        Parallel analysis in two languages
-/analyze --dual r,stata         Same, with Stata as second language
 ```
 
 End-to-end analysis: data cleaning → main specification → robustness → publication tables and figures. Reads the strategy memo (if it exists) and implements it faithfully.
@@ -84,8 +83,8 @@ End-to-end analysis: data cleaning → main specification → robustness → pub
 | *(default)* | Data-engineer + Coder → coder-critic | Scripts, tables, figures in one language |
 | `--dual [langs]` | Data-engineer + 2 Coders in parallel → 2 coder-critics + comparison | Same outputs in both languages + convergence report |
 
-**Languages:** R, Stata, Python, Julia
-**Saves to:** `scripts/`, `Tables/`, `Figures/`, `Output/cross_language_comparison.md`
+**Languages:** R, Python, Julia
+**Saves to:** `scripts/`, `paper/tables/`, `paper/figures/`, `quality_reports/cross_language_comparison.md`
 
 **Cross-language replication:** When `--dual` is used, both implementations run the same specification independently. Results are compared against tolerances in `domain-profile.md`. Divergences are flagged. Inspired by Scott Cunningham's approach: if two independent implementations agree, neither has a bug.
 
@@ -94,10 +93,12 @@ End-to-end analysis: data cleaning → main specification → robustness → pub
 # `/write`
 
 ```
-/write intro                    Introduction (contribution in first 2 pages)
-/write strategy                 Empirical strategy (design-templated)
-/write results                  Results (effect sizes in economic terms)
-/write conclusion               Conclusion (restate with magnitude)
+/write intro                    Introduction (paper-type-specific moves)
+/write strategy                 Empirical strategy / Model (design-specific)
+/write results                  Results (narration by output type)
+/write conclusion               Conclusion (type-specific ending)
+/write data                     Data section (expanded for descriptive papers)
+/write model                    Model section (structural / theory+empirics only)
 /write abstract                 Abstract (100-150 words)
 /write full                     All sections
 /write --humanize [file]        Strip AI writing patterns only
@@ -105,20 +106,22 @@ End-to-end analysis: data cleaning → main specification → robustness → pub
 
 | Mode | Agent | Output |
 |------|-------|--------|
-| `[section]` | Writer | LaTeX section in `Paper/sections/` |
-| `--humanize` | Writer (humanizer mode) | Edited file with 24 AI patterns stripped |
+| `[section]` | Writer | LaTeX section in `paper/sections/` |
+| `--humanize` | Writer (cleanup mode) | Edited file with 24 AI patterns stripped |
 
-Every draft gets an automatic humanizer pass before finalizing.
+The Writer first identifies the paper type (reduced-form, structural, theory+empirics, descriptive), then drafts using paragraph-level argument moves with type-specific section templates. Cleanup pass runs automatically after drafting.
 
 ---
 
 # `/review`
 
 ```
-/review Paper/main.tex          Comprehensive (auto-detect paper)
+/review paper/main.tex          Comprehensive (auto-detect paper)
 /review scripts/R/analysis.R    Code review (auto-detect script)
 /review --peer                  Blind peer review (generic)
 /review --peer JHR              Blind peer review (calibrated to JHR)
+/review --peer --r2             R&R round 2 (referees remember prior reports)
+/review --stress JHR            Maximum-severity stress test (max 3 rounds)
 /review --methods [file]        Causal audit only
 /review --proofread [file]      Manuscript polish only
 /review --code [file]           Code quality only
@@ -130,15 +133,21 @@ Every draft gets an automatic humanizer pass before finalizing.
 |------|--------|---------------|
 | *(auto .tex)* | writer-critic + strategist-critic + Verifier | Writing + identification + compilation |
 | *(auto .R/.py)* | coder-critic | Code quality and reproducibility |
-| `--peer` | domain-referee + methods-referee | Simulated journal review (blind, independent) |
-| `--peer [journal]` | domain-referee + methods-referee | Same, calibrated to that journal's review culture |
+| `--peer` | Editor + domain-referee + methods-referee | Editor desk review → referee assignment with dispositions → blind reports → editorial decision |
+| `--peer [journal]` | Editor + domain-referee + methods-referee | Same, calibrated to that journal's review culture |
+| `--peer --r2` | Editor + domain-referee + methods-referee | R&R round 2 --- referees remember prior reports |
+| `--stress [journal]` | Editor + domain-referee + methods-referee | Maximum-severity stress test (max 3 rounds) |
 | `--methods` | strategist-critic | 4-phase causal design review |
 | `--proofread` | writer-critic | Notation, hedging, LaTeX, claims vs evidence |
 | `--code` | coder-critic | Code quality (no strategy comparison) |
 | `--replicate [lang]` | Coder (replication) + coder-critic | Re-implement in target language, compare outputs |
 | `--all` | All critics in parallel | Weighted aggregate score |
 
-**Journal calibration:** When a journal name is provided with `--peer`, both referees read `.claude/rules/journal-profiles.md` and adapt their priorities, bar, and checklist to that journal. 15 journals are pre-populated; unknown journals still get adapted review using the journal name + your domain profile. You can add custom profiles.
+**Referee dispositions:** Each referee is assigned one of 6 dispositions (Structuralist, Credibility, Measurement, Policy, Theory, Skeptic) plus pet peeves (1 critical + 1 constructive). Every major comment includes "what would change my mind."
+
+**Editorial decision:** The Editor classifies each issue as FATAL (rejection-worthy), ADDRESSABLE (fixable in revision), or TASTE (referee preference, not binding).
+
+**Journal calibration:** When a journal name is provided with `--peer`, the Editor and both referees read `.claude/references/journal-profiles.md` and adapt their priorities, bar, and checklist to that journal. 30 journals are pre-populated (economics and adjacent fields); unknown journals still get adapted review using the journal name + your domain profile. You can add custom profiles.
 
 **Saves to:** `quality_reports/`
 
@@ -172,15 +181,17 @@ For **real** R&R responses (not the simulated `/review --peer`). Give it your ac
 /talk create seminar             Standard seminar (30-45 min, 25-35 slides)
 /talk create short               Conference session (15 min, 10-15 slides)
 /talk create lightning           Elevator pitch (5 min, 3-5 slides)
+/talk create [format] --quarto   Quarto RevealJS version (output to paper/quarto/)
 /talk audit [file]               Visual layout check
-/talk compile [file]             XeLaTeX compilation
+/talk compile [file]             XeLaTeX or Quarto compilation
 ```
 
 | Mode | Agents | Output |
 |------|--------|--------|
-| `create` | Storyteller → storyteller-critic | Beamer `.tex` in `Talks/` |
+| `create` | Storyteller → storyteller-critic | Beamer `.tex` in `paper/talks/` |
+| `create --quarto` | Storyteller → storyteller-critic | Quarto `.qmd` in `paper/quarto/` |
 | `audit` | Visual checks | Layout issues report |
-| `compile` | XeLaTeX | Compiled PDF |
+| `compile` | XeLaTeX or Quarto | Compiled PDF or HTML |
 
 Talk scores are **advisory** (non-blocking).
 
@@ -208,12 +219,14 @@ Talk scores are **advisory** (non-blocking).
 
 ```
 /tools commit [message]          Stage + commit (+ optional PR)
-/tools compile [file]            3-pass XeLaTeX + BibTeX
+/tools compile [file]            latexmk compilation (XeLaTeX + biber)
 /tools validate-bib              Cross-reference all \cite{} keys
 /tools journal                   Research journal timeline
 /tools context                   Context status + session health
 /tools deploy                    Render guide + push to GitHub Pages
 /tools learn                     Extract session discoveries to MEMORY.md
+/tools lint [file|dir]           Mechanical code linting for R/Python/Julia
+/tools upgrade                   Upgrade clo-author infrastructure
 ```
 
 Each subcommand is lightweight --- no multi-agent orchestration.

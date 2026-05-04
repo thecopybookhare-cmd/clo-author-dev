@@ -64,14 +64,14 @@ A creator cannot evaluate the quality of its own work. The score always comes fr
 | explorer | Data assessment | explorer-critic |
 | data-engineer | Data pipeline and cleaned datasets | coder-critic |
 | strategist | Strategy memo | strategist-critic |
-| coder | R/Stata/Python scripts | coder-critic |
+| coder | R/Python/Julia scripts | coder-critic |
 | writer | Paper manuscript | writer-critic |
 | storyteller | Beamer talk | storyteller-critic |
 
 ### Enforcement
 
 The Orchestrator flags violations:
-- If a critic invocation produces a file in `scripts/`, `Paper/`, or `Talks/` → flag
+- If a critic invocation produces a file in `scripts/`, `paper/`, or `paper/talks/` → flag
 - If a creator reports its own score → discard, dispatch critic
 
 ---

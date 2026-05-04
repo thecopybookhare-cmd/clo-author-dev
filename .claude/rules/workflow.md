@@ -99,7 +99,7 @@ The Orchestrator selects agents based on what the task requires:
 | Data sourcing | explorer + explorer-critic |
 | Data engineering | data-engineer + coder-critic |
 | Identification strategy | strategist + strategist-critic |
-| R/Stata/Python scripts | coder + coder-critic |
+| R/Python/Julia scripts | coder + coder-critic |
 | Paper manuscript | writer + writer-critic |
 | Peer review | Orchestrator → domain-referee + methods-referee |
 | Beamer talks | storyteller + storyteller-critic |
@@ -201,7 +201,7 @@ The Orchestrator activates Discovery → Strategy → Execution → Peer Review 
 
 The user invokes a skill directly:
 
-> `/strategize Paper/main.tex`
+> `/strategize paper/main.tex`
 
 This runs the strategist-critic agent alone, right now, no phase dependencies.
 

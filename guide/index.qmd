@@ -1,13 +1,13 @@
 ---
 title: "The Clo-Author"
-subtitle: "Your Econ AI Research Assistant for Claude Code"
+subtitle: "AI Research Architecture for Economics"
 ---
 
-An open-source [Claude Code](https://docs.anthropic.com/en/docs/claude-code) workflow that turns your terminal into a full-service applied econometrics research assistant --- from literature review to journal submission.
+An open-source [Claude Code](https://docs.anthropic.com/en/docs/claude-code) scaffold for empirical economics research --- from literature review to journal submission. Can be adapted to adjacent fields (finance, accounting, marketing, management) by customizing the domain profile and journal profiles.
 
-**Built on** [Pedro Sant'Anna's claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow), reoriented for applied econometrics research publication.
+**Built on** [Pedro Sant'Anna's claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow), reoriented for empirical research publication.
 
-You describe a task in plain English. Claude plans the approach, dispatches specialized agents, reviews quality, fixes issues, and presents results. Like a contractor who manages the entire job --- 16 agents, 10 commands, all running behind the scenes.
+You describe a task in plain English. Claude plans the approach (you approve), dispatches specialized agents, reviews quality, fixes issues, and presents results --- 17 agents, 10 commands, all running behind the scenes. You review the output at each stage.
 
 ## Get Started in 5 Minutes
 
@@ -30,7 +30,7 @@ Using VS Code? Open the Claude Code panel instead. Everything works the same.
 
 Fill in the **bolded placeholders** with your project details:
 
-> I am starting a new applied econometrics research project on **[YOUR TOPIC]**.
+> I am starting a new empirical research project in **[YOUR FIELD]** on **[YOUR TOPIC]**.
 > Read CLAUDE.md and help me set up the project structure.
 > Start with `/discover --lit [YOUR TOPIC]`.
 
@@ -41,18 +41,21 @@ Claude reads the configuration, fills in your project details, and enters contra
 Once setup is done, just describe what you need:
 
 - "Review my paper" --- checks your identification strategy, code, writing, and LaTeX in parallel
-- `/review --methods Paper/main.tex` --- validates your DiD/IV/RDD assumptions, clustering, and inference
+- `/review --methods paper/main.tex` --- validates your causal design assumptions, clustering, and inference
 - `/analyze Data/cleaned/survey.csv` --- cleans data, runs your specification, produces tables and figures
 - `/new-project health insurance` --- walks you through the full pipeline from literature review to submission
 
+::: {.callout-tip title="Just Want to Try 2 Commands?"}
+Already have a paper? `/review paper/main.tex` checks your identification, code, writing, and LaTeX.
+Want to draft a section? `/write intro` produces a structured first draft adapted to your paper type.
+Everything else is optional --- explore when you're ready.
+:::
+
 ## What Happens Behind the Scenes
 
-You talk, Claude orchestrates. The 16 agents work in **worker-critic pairs** --- every creator has a paired critic who can't edit files, only review. Two specialized referees (domain + methods) simulate real journal peer review. The orchestrator dispatches agents based on a dependency graph, enforces quality gates (80/90/95), and routes escalations when critics and creators can't agree after 3 rounds.
+You describe tasks in plain English. Claude dispatches specialized agents --- one creates, another reviews --- and presents results for your approval. Quality gates run in the background so broken work never ships. For the full picture: [Walkthrough](user-guide.qmd), [Agents](agents.qmd), [Architecture](architecture.qmd), [Commands](reference.qmd).
 
-For the full picture: [User Guide](user-guide.qmd) (what you can do), [Meet the Agents](agents.qmd) (who does the work), [Architecture](architecture.qmd) (how the system works), [Customization](customization.qmd) (how to make it yours), and [Command Reference](reference.qmd) (every flag and subcommand).
-
-## Day 1 Checklist
-
+::: {.callout-note collapse="true" title="Day 1 Checklist"}
 - [ ] Fork the repo and clone it locally
 - [ ] Run `claude` in the project directory
 - [ ] Paste the starter prompt (fill in your project details)
@@ -62,6 +65,7 @@ For the full picture: [User Guide](user-guide.qmd) (what you can do), [Meet the 
 - [ ] Approve the task plan, watch it work, review the output
 
 That's it. Everything else --- agents, hooks, rules --- runs automatically in the background.
+:::
 
 ::: {.callout-note collapse="true"}
 ## Optional: Manual Setup
@@ -74,7 +78,7 @@ If you prefer to configure things yourself instead of letting Claude handle it:
 2. **Folder structure** (adjust to your layout)
 3. **Current project state** (your papers and analyses)
 
-**Fill in the domain profile** --- Run `/discover` (interactive interview) or manually edit `.claude/rules/domain-profile.md`:
+**Fill in the domain profile** --- Run `/discover` (interactive interview) or manually edit `.claude/references/domain-profile.md`:
 
 1. **Your field** and adjacent subfields
 2. **Target journals** ranked by tier
@@ -86,8 +90,8 @@ If you prefer to configure things yourself instead of letting Claude handle it:
 **Test it:**
 
 ```bash
-/tools compile Paper/main.tex
-/review --proofread Paper/main.tex
+/tools compile paper/main.tex
+/review --proofread paper/main.tex
 ```
 :::
 
@@ -100,12 +104,12 @@ If you prefer to configure things yourself instead of letting Claude handle it:
 | R | Analysis & figures | [r-project.org](https://www.r-project.org/) |
 | [gh CLI](https://cli.github.com/) | GitHub integration | `brew install gh` (macOS) |
 
-Optional: Stata, Python, Julia (multi-language analysis), [Quarto](https://quarto.org) (web slides).
+Optional: Python, Julia (multi-language analysis), [Quarto](https://quarto.org) (web slides).
 
 ## Origin
 
-This project is a fork of [Pedro Sant'Anna's claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow), which was built for Econ 730 at Emory University (6 lectures, 800+ slides). The Clo-Author reorients that infrastructure from lecture production to applied econometrics research publication.
+This project is a fork of [Pedro Sant'Anna's claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow), which was built for Econ 730 at Emory University (6 lectures, 800+ slides). The Clo-Author reorients that infrastructure from lecture production to empirical economics research.
 
-The `/humanizer` skill is by [Siqi Chen](https://github.com/blader/humanizer), adapted here for academic writing in economics.
+The `/humanizer` skill is by [Siqi Chen](https://github.com/blader/humanizer), adapted here for academic writing.
 
 Maintained by [Hugo Sant'Anna](https://hsantanna.org). MIT License --- fork it, customize it, make it yours.
